@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ony ANDRIANAVALOMANAMPY — Portfolio</title>
+  <meta name="description" content="Portfolio de Ony Andrianavalomanampy — Développeur full-stack, WordPress, Prestashop, Laravel, Symfony" />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#4f46e5;--glass: rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:linear-gradient(180deg,#071026 0%, #071428 60%);color:#e6eef6}
+    .container{max-width:1100px;margin:32px auto;padding:24px}
+    header{display:flex;gap:24px;align-items:center}
+    .avatar{width:120px;height:120px;border-radius:16px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px;color:white;flex-shrink:0}
+    h1{margin:0;font-size:28px}
+    .title-meta{display:flex;flex-direction:column}
+    .subtitle{color:var(--muted);margin-top:6px}
+    .cta{margin-left:auto;display:flex;gap:8px}
+    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:24px;margin-top:24px}
+    main{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+    aside{position:sticky;top:24px;background:var(--card);padding:18px;border-radius:12px;height:max-content}
+    section + section{margin-top:18px}
+    h2{font-size:16px;margin:0 0 12px 0}
+    p.lead{color:var(--muted);margin:0 0 12px 0}
+    .meta-list{display:flex;flex-direction:column;gap:8px}
+    .meta-item{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:14px}
+    .skill-list{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{background:var(--glass);padding:6px 10px;border-radius:8px;font-size:13px;color:#d9e6ff}
+    .exp{border-left:3px solid rgba(255,255,255,0.03);padding:12px 16px;border-radius:6px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+    .exp time{display:block;color:var(--muted);font-size:13px}
+    .project{padding:12px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);margin-bottom:10px}
+    footer{color:var(--muted);text-align:center;margin-top:28px;font-size:14px}
+    nav{display:flex;gap:12px;margin-top:12px}
+    nav a{color:var(--muted);text-decoration:none;font-size:14px}
+    .contact-me{display:flex;flex-direction:column;gap:8px}
+    .download{display:inline-block;margin-top:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px;border-radius:8px;color:var(--muted);text-decoration:none}
+    /* responsive */
+    @media (max-width:900px){.grid{grid-template-columns:1fr}.cta{margin-left:0}.avatar{width:90px;height:90px;font-size:22px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar">OA</div>
+      <div class="title-meta">
+        <h1>Ony ANDRIANAVALOMANAMPY</h1>
+        <div class="subtitle">Développeur polyvalent — WordPress · Prestashop · Laravel · Symfony · PHP</div>
+        <nav>
+          <a href="#about">À propos</a>
+          <a href="#work">Expériences</a>
+          <a href="#projects">Projets</a>
+          <a href="#skills">Compétences</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="cta">
+        <a class="btn" href="#contact">Contactez-moi</a>
+        <a class="download" href="#" onclick="downloadCV()">Télécharger CV</a>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main>
+        <section id="about">
+          <h2>À propos</h2>
+          <p class="lead">Développeur full-stack avec plus de 15 ans d'expérience en conception et développement d'applications web et solutions de e‑commerce. Expert en WordPress et Prestashop, habitué aux migrations, développements de modules, corrections de bugs et intégrations front-end/back-end.</p>
+          <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+            <div style="flex:1;min-width:220px">
+              <h3 style="margin:0 0 8px 0">Détails</h3>
+              <div class="meta-list">
+                <div class="meta-item"><strong>Téléphone:</strong>&nbsp;+261 33 37 670 39</div>
+                <div class="meta-item"><strong>Email:</strong>&nbsp;onyrf@yahoo.fr</div>
+                <div class="meta-item"><strong>Localisation:</strong>&nbsp;Antananarivo, Madagascar</div>
+                <div class="meta-item"><strong>Né le:</strong>&nbsp;15 juillet 1982</div>
+              </div>
+            </div>
+            <div style="flex:1;min-width:220px">
+              <h3 style="margin:0 0 8px 0">Langues</h3>
+              <div class="meta-list">
+                <div class="meta-item">Français — Courant</div>
+                <div class="meta-item">Anglais — Professionnel</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="work">
+          <h2>Expériences professionnelles</h2>
+
+          <div class="exp">
+            <strong>MAKI-AGENCY — Développeur polyvalent</strong>
+            <time>Juin 2021 – à ce jour</time>
+            <p class="lead">Développement de plugins et dynamisation de sites WordPress & Prestashop. Correction de bugs, migrations et intégration de thèmes, conversions de bannières en HTML5.</p>
+          </div>
+
+          <div class="exp" style="margin-top:10px">
+            <strong>Freelance — Développeur</strong>
+            <time>Septembre 2016 – Présent</time>
+            <p class="lead">Réalisation de modules Prestashop (1.6 → 1.7 → 8.1), migrations de sites, corrections et améliorations de modules pour de nombreux sites e‑commerce. Développement sur WordPress, CodeIgniter, Ionic (app mobile) et projets divers.</p>
+          </div>
+
+          <div class="exp" style="margin-top:10px">
+            <strong>MINERAGREX — Développeur Intranet</strong>
+            <time>Juin 2016 – Septembre 2016</time>
+            <p class="lead">Conception et la maintenance d'applications intranet pour la gestion des plantations (Symfony2, CodeIgniter, MySQL).</p>
+          </div>
+
+          <div class="exp" style="margin-top:10px">
+            <strong>AIR MADAGASCAR — Agent administratif (MDP)</strong>
+            <time>Sept 2011 – Juin 2015</time>
+            <p class="lead">Gestion des stocks aéronautiques, administration de bases de données (ACCESS, AS400), extraction et maintenance des données.</p>
+          </div>
+
+        </section>
+
+        <section id="projects">
+          <h2>Projets marquants</h2>
+
+          <div class="project">
+            <strong>Module Marketplace (Prestashop)</strong>
+            <p class="lead">Création d'un module marketplace pour Prestashop 1.7 — frontend & backend, gestion des vendeurs et commissions.</p>
+          </div>
+
+          <div class="project">
+            <strong>Migrations Prestashop</strong>
+            <p class="lead">Migration de plusieurs sites (1.6 → 1.7 → 8.1), résolution de bugs, adaptation de thèmes et modules (ex: esperantine.com, mega-discount.fr).</p>
+          </div>
+
+          <div class="project">
+            <strong>Développement plugins WordPress</strong>
+            <p class="lead">Divers plugins personnalisés, optimisations et intégrations (front & back).</p>
+          </div>
+
+          <div class="project">
+            <strong>Application multi-plateforme (Ionic3)</strong>
+            <p class="lead">Application de mise en relation avec chat privé et géolocalisation; backend en PHP/MySQL.</p>
+          </div>
+
+        </section>
+
+        <section id="education">
+          <h2>Formation</h2>
+          <div class="exp">
+            <strong>CNTEMAD — Licence Professionnel Informatique</strong>
+            <time>2009 – 2011</time>
+            <p class="lead">Spécialisation : Développeur d'application.</p>
+          </div>
+
+          <div class="exp" style="margin-top:10px">
+            <strong>CNTEMAD — DTSIG</strong>
+            <time>2007 – 2009</time>
+            <p class="lead">Diplôme de Technicien Supérieur Informatique de Gestion.</p>
+          </div>
+        </section>
+
+      </main>
+
+      <aside>
+        <section id="skills">
+          <h2>Compétences</h2>
+          <div class="skill-list">
+            <span class="skill">PHP</span>
+            <span class="skill">MySQL</span>
+            <span class="skill">WordPress</span>
+            <span class="skill">Prestashop</span>
+            <span class="skill">Laravel</span>
+            <span class="skill">Symfony</span>
+            <span class="skill">HTML5</span>
+            <span class="skill">CSS3</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">Delphi</span>
+            <span class="skill">C#</span>
+            <span class="skill">Administration serveur</span>
+          </div>
+        </section>
+
+        <section style="margin-top:14px">
+          <h2>Outils & Frameworks</h2>
+          <div class="meta-list">
+            <div class="meta-item">WordPress · PrestaShop · CodeIgniter · Symfony · Ionic</div>
+            <div class="meta-item">Git · Composer · MySQL · Docker (basique)</div>
+          </div>
+        </section>
+
+        <section style="margin-top:14px" id="contact">
+          <h2>Contact</h2>
+          <div class="contact-me">
+            <div><strong>Téléphone:</strong> +261 33 37 670 39</div>
+            <div><strong>Email:</strong> onyrf@yahoo.fr</div>
+            <div><strong>Adresse:</strong> Lot IIS 49D Anjanahary, Antananarivo 101</div>
+            <a class="btn" href="mailto:onyrf@yahoo.fr">Envoyer un e‑mail</a>
+          </div>
+        </section>
+
+        <section style="margin-top:14px">
+          <h2>Téléchargements</h2>
+          <a class="download" href="#" onclick="downloadCV()">Télécharger le CV (DOCX)</a>
+        </section>
+      </aside>
+    </div>
+
+    <footer>
+      <div>© Ony Andrianavalomanampy — Portfolio • Conçu pour être déployé (HTML/CSS) • Dernière mise à jour: 2025</div>
+    </footer>
+  </div>
+
+  <script>
+    function downloadCV(){
+      // Le fichier DOCX a été uploadé dans la session. On propose au visiteur de télécharger un fichier local via une URL relative si vous l'hébergez.
+      // Ici on crée un lien temporaire vers le CV et déclenche le téléchargement (si le fichier existe sur le même serveur).
+      var url = 'Curriculum_vitae_MAKI.docx';
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'CV_Ony_ANDRIANAVALOMANAMPY.docx';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    }
+  </script>
+</body>
+</html>
