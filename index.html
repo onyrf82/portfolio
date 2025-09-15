@@ -1,42 +1,105 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Ony ANDRIANAVALOMANAMPY — Portfolio</title>
-  <meta name="description" content="Portfolio de Ony Andrianavalomanampy — Développeur full-stack, WordPress, Prestashop, Laravel, Symfony" />
+  <meta name="description" content="Portfolio de Ony Andrianavalomanampy — Développeur full-stack, WordPress, Prestashop, Laravel, Symfony">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#4f46e5;--glass: rgba(255,255,255,0.03)}
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:linear-gradient(180deg,#071026 0%, #071428 60%);color:#e6eef6}
-    .container{max-width:1100px;margin:32px auto;padding:24px}
-    header{display:flex;gap:24px;align-items:center}
-    .avatar{width:120px;height:120px;border-radius:16px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px;color:white;flex-shrink:0}
-    h1{margin:0;font-size:28px}
-    .title-meta{display:flex;flex-direction:column}
-    .subtitle{color:var(--muted);margin-top:6px}
-    .cta{margin-left:auto;display:flex;gap:8px}
-    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
-    .grid{display:grid;grid-template-columns:1fr 320px;gap:24px;margin-top:24px}
-    main{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
-    aside{position:sticky;top:24px;background:var(--card);padding:18px;border-radius:12px;height:max-content}
-    section + section{margin-top:18px}
-    h2{font-size:16px;margin:0 0 12px 0}
-    p.lead{color:var(--muted);margin:0 0 12px 0}
-    .meta-list{display:flex;flex-direction:column;gap:8px}
-    .meta-item{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:14px}
-    .skill-list{display:flex;flex-wrap:wrap;gap:8px}
-    .skill{background:var(--glass);padding:6px 10px;border-radius:8px;font-size:13px;color:#d9e6ff}
-    .exp{border-left:3px solid rgba(255,255,255,0.03);padding:12px 16px;border-radius:6px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
-    .exp time{display:block;color:var(--muted);font-size:13px}
-    .project{padding:12px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);margin-bottom:10px}
-    footer{color:var(--muted);text-align:center;margin-top:28px;font-size:14px}
-    nav{display:flex;gap:12px;margin-top:12px}
-    nav a{color:var(--muted);text-decoration:none;font-size:14px}
-    .contact-me{display:flex;flex-direction:column;gap:8px}
-    .download{display:inline-block;margin-top:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px;border-radius:8px;color:var(--muted);text-decoration:none}
-    /* responsive */
-    @media (max-width:900px){.grid{grid-template-columns:1fr}.cta{margin-left:0}.avatar{width:90px;height:90px;font-size:22px}}
+    :root{
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #9aa4b2;
+      --accent: #4f46e5;
+      --glass: rgba(255,255,255,0.03);
+      --transition: 0.4s ease;
+    }
+
+    *{box-sizing:border-box;}
+    body, html{margin:0;padding:0;height:100%;font-family:'Inter',sans-serif;background:linear-gradient(180deg,#071026 0%,#071428 60%);color:#e6eef6;scroll-behavior:smooth;}
+    a{text-decoration:none;color:inherit;}
+    .container{max-width:1100px;margin:32px auto;padding:24px;}
+
+    header{
+      display:flex;
+      align-items:center;
+      gap:24px;
+      flex-wrap: wrap;
+      animation:fadeIn 1s ease forwards;
+    }
+
+    .avatar{
+      width:120px;height:120px;border-radius:20px;
+      background:linear-gradient(135deg,var(--accent),#06b6d4);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;font-size:28px;color:white;
+      flex-shrink:0;
+      transform: translateY(-20px);
+      opacity:0;
+      animation:slideDown 0.8s forwards 0.2s;
+    }
+
+    h1{margin:0;font-size:28px;}
+    .title-meta{display:flex;flex-direction:column;gap:4px;}
+    .subtitle{color:var(--muted);}
+    nav{display:flex;gap:12px;margin-top:8px;}
+    nav a{color:var(--muted);position:relative;transition:var(--transition);}
+    nav a::after{
+      content:'';
+      position:absolute;
+      width:0;
+      height:2px;
+      background:var(--accent);
+      left:0;bottom:-2px;
+      transition:width 0.3s ease;
+    }
+    nav a:hover::after{width:100%;}
+
+    .cta{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;}
+    .btn{
+      background:var(--accent);color:white;padding:10px 14px;border-radius:10px;
+      font-weight:600;transition:var(--transition);
+    }
+    .btn:hover{transform:translateY(-3px);box-shadow:0 6px 15px rgba(79,70,229,0.3);}
+    .download{
+      display:inline-block;padding:8px;border:1px solid rgba(255,255,255,0.06);border-radius:8px;
+      color:var(--muted);transition:var(--transition);
+    }
+    .download:hover{background:var(--accent);color:white;border:none;transform:translateY(-2px);}
+
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:24px;margin-top:24px;}
+    main{background:var(--card);padding:24px;border-radius:16px;box-shadow:0 8px 25px rgba(2,6,23,0.6);}
+    aside{position:sticky;top:24px;background:var(--card);padding:20px;border-radius:16px;height:max-content;}
+    section{margin-bottom:24px;opacity:0;transform:translateY(20px);animation:fadeUp 1s forwards;}
+    section:nth-child(1){animation-delay:0.2s;}
+    section:nth-child(2){animation-delay:0.4s;}
+    section:nth-child(3){animation-delay:0.6s;}
+    section:nth-child(4){animation-delay:0.8s;}
+
+    h2{font-size:18px;margin:0 0 12px 0;color:#e6eef6;}
+    p.lead{color:var(--muted);margin:0 0 12px 0;}
+    .meta-list{display:flex;flex-direction:column;gap:8px;}
+    .meta-item{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:14px;}
+    .skill-list{display:flex;flex-wrap:wrap;gap:8px;}
+    .skill{background:var(--glass);padding:6px 10px;border-radius:8px;font-size:13px;color:#d9e6ff;transition:var(--transition);}
+    .skill:hover{background:var(--accent);color:white;}
+
+    .exp{border-left:3px solid rgba(255,255,255,0.03);padding:14px 18px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);margin-bottom:10px;transition:var(--transition);}
+    .exp:hover{transform:translateY(-3px);box-shadow:0 6px 15px rgba(79,70,229,0.3);}
+    .exp time{display:block;color:var(--muted);font-size:13px;}
+    .project{padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);margin-bottom:12px;transition:var(--transition);}
+    .project:hover{transform:translateY(-2px);box-shadow:0 5px 12px rgba(79,70,229,0.2);}
+    footer{text-align:center;color:var(--muted);margin-top:32px;font-size:14px;}
+
+    @media(max-width:900px){.grid{grid-template-columns:1fr}.cta{margin-left:0}.avatar{width:90px;height:90px;font-size:22px;}}
+
+    /* Animations */
+    @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+    @keyframes slideDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
   </style>
 </head>
 <body>
@@ -64,96 +127,20 @@
       <main>
         <section id="about">
           <h2>À propos</h2>
-          <p class="lead">Développeur full-stack avec plus de 15 ans d'expérience en conception et développement d'applications web et solutions de e‑commerce. Expert en WordPress et Prestashop, habitué aux migrations, développements de modules, corrections de bugs et intégrations front-end/back-end.</p>
-          <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
-            <div style="flex:1;min-width:220px">
-              <h3 style="margin:0 0 8px 0">Détails</h3>
-              <div class="meta-list">
-                <div class="meta-item"><strong>Téléphone:</strong>&nbsp;+261 33 37 670 39</div>
-                <div class="meta-item"><strong>Email:</strong>&nbsp;onyrf@yahoo.fr</div>
-                <div class="meta-item"><strong>Localisation:</strong>&nbsp;Antananarivo, Madagascar</div>
-                <div class="meta-item"><strong>Né le:</strong>&nbsp;15 juillet 1982</div>
-              </div>
-            </div>
-            <div style="flex:1;min-width:220px">
-              <h3 style="margin:0 0 8px 0">Langues</h3>
-              <div class="meta-list">
-                <div class="meta-item">Français — Courant</div>
-                <div class="meta-item">Anglais — Professionnel</div>
-              </div>
-            </div>
-          </div>
+          <p class="lead">Développeur full-stack avec plus de 15 ans d'expérience en conception et développement d'applications web et solutions de e‑commerce.</p>
         </section>
 
         <section id="work">
           <h2>Expériences professionnelles</h2>
-
-          <div class="exp">
-            <strong>MAKI-AGENCY — Développeur polyvalent</strong>
-            <time>Juin 2021 – à ce jour</time>
-            <p class="lead">Développement de plugins et dynamisation de sites WordPress & Prestashop. Correction de bugs, migrations et intégration de thèmes, conversions de bannières en HTML5.</p>
-          </div>
-
-          <div class="exp" style="margin-top:10px">
-            <strong>Freelance — Développeur</strong>
-            <time>Septembre 2016 – Présent</time>
-            <p class="lead">Réalisation de modules Prestashop (1.6 → 1.7 → 8.1), migrations de sites, corrections et améliorations de modules pour de nombreux sites e‑commerce. Développement sur WordPress, CodeIgniter, Ionic (app mobile) et projets divers.</p>
-          </div>
-
-          <div class="exp" style="margin-top:10px">
-            <strong>MINERAGREX — Développeur Intranet</strong>
-            <time>Juin 2016 – Septembre 2016</time>
-            <p class="lead">Conception et la maintenance d'applications intranet pour la gestion des plantations (Symfony2, CodeIgniter, MySQL).</p>
-          </div>
-
-          <div class="exp" style="margin-top:10px">
-            <strong>AIR MADAGASCAR — Agent administratif (MDP)</strong>
-            <time>Sept 2011 – Juin 2015</time>
-            <p class="lead">Gestion des stocks aéronautiques, administration de bases de données (ACCESS, AS400), extraction et maintenance des données.</p>
-          </div>
-
+          <div class="exp"><strong>MAKI-AGENCY — Développeur polyvalent</strong><time>Juin 2021 – à ce jour</time><p class="lead">Plugins et dynamisation de sites WordPress & Prestashop.</p></div>
+          <div class="exp"><strong>Freelance — Développeur</strong><time>Septembre 2016 – Présent</time><p class="lead">Modules Prestashop, migrations, WordPress, CodeIgniter, Ionic.</p></div>
         </section>
 
         <section id="projects">
           <h2>Projets marquants</h2>
-
-          <div class="project">
-            <strong>Module Marketplace (Prestashop)</strong>
-            <p class="lead">Création d'un module marketplace pour Prestashop 1.7 — frontend & backend, gestion des vendeurs et commissions.</p>
-          </div>
-
-          <div class="project">
-            <strong>Migrations Prestashop</strong>
-            <p class="lead">Migration de plusieurs sites (1.6 → 1.7 → 8.1), résolution de bugs, adaptation de thèmes et modules (ex: esperantine.com, mega-discount.fr).</p>
-          </div>
-
-          <div class="project">
-            <strong>Développement plugins WordPress</strong>
-            <p class="lead">Divers plugins personnalisés, optimisations et intégrations (front & back).</p>
-          </div>
-
-          <div class="project">
-            <strong>Application multi-plateforme (Ionic3)</strong>
-            <p class="lead">Application de mise en relation avec chat privé et géolocalisation; backend en PHP/MySQL.</p>
-          </div>
-
+          <div class="project"><strong>Module Marketplace (Prestashop)</strong><p class="lead">Création frontend & backend pour gestion des vendeurs et commissions.</p></div>
+          <div class="project"><strong>Migrations Prestashop</strong><p class="lead">Migration de plusieurs sites et adaptation de thèmes et modules.</p></div>
         </section>
-
-        <section id="education">
-          <h2>Formation</h2>
-          <div class="exp">
-            <strong>CNTEMAD — Licence Professionnel Informatique</strong>
-            <time>2009 – 2011</time>
-            <p class="lead">Spécialisation : Développeur d'application.</p>
-          </div>
-
-          <div class="exp" style="margin-top:10px">
-            <strong>CNTEMAD — DTSIG</strong>
-            <time>2007 – 2009</time>
-            <p class="lead">Diplôme de Technicien Supérieur Informatique de Gestion.</p>
-          </div>
-        </section>
-
       </main>
 
       <aside>
@@ -166,53 +153,29 @@
             <span class="skill">Prestashop</span>
             <span class="skill">Laravel</span>
             <span class="skill">Symfony</span>
-            <span class="skill">HTML5</span>
-            <span class="skill">CSS3</span>
-            <span class="skill">JavaScript</span>
-            <span class="skill">Delphi</span>
-            <span class="skill">C#</span>
-            <span class="skill">Administration serveur</span>
           </div>
         </section>
 
-        <section style="margin-top:14px">
-          <h2>Outils & Frameworks</h2>
-          <div class="meta-list">
-            <div class="meta-item">WordPress · PrestaShop · CodeIgniter · Symfony · Ionic</div>
-            <div class="meta-item">Git · Composer · MySQL · Docker (basique)</div>
-          </div>
-        </section>
-
-        <section style="margin-top:14px" id="contact">
+        <section id="contact" style="margin-top:24px;">
           <h2>Contact</h2>
           <div class="contact-me">
             <div><strong>Téléphone:</strong> +261 33 37 670 39</div>
             <div><strong>Email:</strong> onyrf@yahoo.fr</div>
-            <div><strong>Adresse:</strong> Lot IIS 49D Anjanahary, Antananarivo 101</div>
             <a class="btn" href="mailto:onyrf@yahoo.fr">Envoyer un e‑mail</a>
           </div>
-        </section>
-
-        <section style="margin-top:14px">
-          <h2>Téléchargements</h2>
-          <a class="download" href="#" onclick="downloadCV()">Télécharger le CV (DOCX)</a>
         </section>
       </aside>
     </div>
 
-    <footer>
-      <div>© Ony Andrianavalomanampy — Portfolio • Conçu pour être déployé (HTML/CSS) • Dernière mise à jour: 2025</div>
-    </footer>
+    <footer>© Ony Andrianavalomanampy — Portfolio • Dernière mise à jour: 2025</footer>
   </div>
 
   <script>
     function downloadCV(){
-      // Le fichier DOCX a été uploadé dans la session. On propose au visiteur de télécharger un fichier local via une URL relative si vous l'hébergez.
-      // Ici on crée un lien temporaire vers le CV et déclenche le téléchargement (si le fichier existe sur le même serveur).
-      var url = 'Curriculum_vitae_MAKI.docx';
+      var url = 'CV_FR 2025.pdf';
       var a = document.createElement('a');
       a.href = url;
-      a.download = 'CV_Ony_ANDRIANAVALOMANAMPY.docx';
+      a.download = 'CV_Ony_ANDRIANAVALOMANAMPY.pdf';
       document.body.appendChild(a);
       a.click();
       a.remove();
